@@ -1,0 +1,31 @@
+<ng-container>
+    <div class="addAppointBtns flex">
+        <button mat-raised-button color="primary"><span>+&ensp;</span>Add Appointment</button>
+        <button mat-stroked-button color="primary"><mat-icon>person_add</mat-icon> Register Patient</button>
+    </div>
+    <ng-container>
+        <section class="allNotify"s>
+            <p><mat-icon>calendar_today</mat-icon> Today's Appointments</p>
+            <section class="notiSec" *ngFor="let item of appData"
+            [ngClass]="{'completed': item.status == 'Completed',
+                        'delayed': item.status == 'Delayed',
+                        'pending': item.status == 'Pending',
+                        'in-progress': item.status == 'In Progress'
+            }">
+                <div class="flex det">
+                    <div class="flex time">
+                        <p class="date_text">{{item.time}}</p>
+                        <div class="">
+                            <p>{{item.name}}</p>
+                            <p>{{item.mobile}}</p>
+                        </div>
+                    </div>
+                    <div class="Status" style="width: 120px;">
+                        <p><mat-icon>{{item.check}}</mat-icon> {{item.status}}</p>
+                    </div>
+                </div>
+                <p>Treatment: {{item.treatmentType}} &emsp;Dentist : {{item.doctorName}}</p>
+            </section>
+        </section>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,31 @@
+
+/* Layout below header */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.layout {
+  display: flex;
+  height: calc(100vh - 120px); // adjust to header height
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+//   border-right: 1px solid #eaeaea;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-right: 1px solid #f0efef;
+}
+
+/* ONLY CONTENT SCROLLS */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+//   background: #f8fafd;
+}

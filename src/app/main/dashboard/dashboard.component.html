@@ -1,0 +1,67 @@
+<ng-container>
+    <section class="container">
+        <section class="cummulativeData">
+            <div class="minCard" *ngFor="let card of cardData">
+                <div class="data">
+                    <p>{{card.type}}</p>
+                    <p>{{card.count}}</p>
+                </div>
+                <div [ngClass]="{'appoint': card.menuLogo == 'calendar_today',
+                                'group' :card.menuLogo == 'group'
+                }">
+                    <mat-icon>{{card.menuLogo}}</mat-icon>
+                </div>
+            </div>
+        </section>
+        <div class="flex">
+            <section class="appointments">
+                <div class="flex justify-content">
+                    <p>Today's Appointments</p>
+                    <a [routerLink]="['/appointments']">View All</a>
+                </div>
+                <div class="appData">
+                    <div class="info_detail flex justify-content" *ngFor="let data of treatmentDetails">
+                        <div class="flex">
+                            <p>{{data.time}}</p>
+                            <div>
+                                <p>{{data.name}}</p>
+                                <p>{{data.treatmentType}}</p>
+                            </div>
+                        </div>
+                        <span class="flex pad" >
+                            <span [ngClass]="{'blue': data.status == 'Upcoming',
+                                                        'green' :data.status == 'Completed'
+                                                        }">{{data.status}}</span>
+                        </span>
+                        
+                    </div>
+                    <hr>
+                </div>
+            </section>
+            <section class="actions">
+                <p>Quick Actions</p>
+                <div class="appData">
+                    <button>New Appointment</button>
+                    <button>Add Patient</button>
+                    <button>Prescribe Medication</button>
+                    <button>New Treatment Plan</button>
+                </div>
+            </section>
+        </div>
+        <!-- account_circle -->
+        <section class="patientsData">
+                <div class="flex justify-content">
+                    <p>Recent Patients</p>
+                    <a [routerLink]="['/patients']">View All</a>
+                </div>
+                <div class="patientsDetails flex" *ngFor="let pat of patients">
+                    <mat-icon>account_circle</mat-icon>
+                    <div class="patient">
+                        <p>{{pat.patient}}</p>
+                        <p>{{pat.lastVisit | date}}</p>
+                    </div>
+                </div>
+        </section>
+    </section>
+
+</ng-container>

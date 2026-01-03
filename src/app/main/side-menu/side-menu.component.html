@@ -1,0 +1,14 @@
+
+<ng-container>
+    <section class="menuLabels">
+        <div  *ngFor="let menu of appMenus">
+            <a [routerLink]="menu.route" routerLinkActive="active" class="menu">
+                <div>
+                    <mat-icon>{{menu.menuLogo}}</mat-icon>
+                </div>
+                <p>{{menu.menuName}}</p>
+            </a>
+        </div>
+    </section>
+</ng-container>
+

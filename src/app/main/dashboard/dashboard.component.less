@@ -1,0 +1,107 @@
+@import 'src/styles/variables.less';
+
+.container {
+    padding: 24px;
+}
+
+.flex {
+    display: flex;
+    gap: 20px;
+}
+
+.justify-content {
+    justify-content: space-between;
+}
+
+.cummulativeData {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.card {
+    border-radius: 8px;
+    border: 1px solid #f0efef;
+    background-color: @card-backgroundColor;
+    padding: 14px;
+}
+
+.minCard {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    height: 120px;
+    gap: 25px;
+    .card();
+}
+
+.card_logo_common {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.appoint {
+    .card_logo_common();
+    background-color: #969cf180;
+    color: #3d50d8;
+}
+.blue{
+    background-color: #aef19680;
+    color: #36925c;
+}
+.green{
+    background-color: #aef19680;
+    color: #36925c;
+}
+
+.group {
+    .card_logo_common();
+    background-color: #aef19680;
+    color: #36925c;
+}
+
+.example-button-row {
+    margin: 8px 8px 8px 0;
+}
+
+.appointments {
+    .card();
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.pad {
+    padding: 4px 2px;
+}
+.appData{
+    padding: 16px 0;
+}
+
+.info_detail,.patientsDetails{
+    padding: 4px 0;
+}
+
+.actions{
+    width: 20%;
+    margin-bottom: 20px;
+    .card();
+    button{
+        display: block;
+        padding: 6px;
+        border-radius: 6px;
+        border: 1px solid gray;
+        background: none;
+        cursor: pointer;
+        width: 150px;
+        margin: 6px auto;
+        &:hover{
+            background-color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+.patientsData{
+    
+    .card();
+}
