@@ -1,0 +1,35 @@
+
+@import 'src/styles/variables.less';
+
+.card {
+    border-radius: 8px;
+    border: 1px solid #f0efef;
+    background-color: @card-backgroundColor;
+    padding: 12px;
+    margin: 24px 0;
+}
+.patients{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.patient{
+    width: 200px;
+    height: auto;
+    .card();
+    img{
+    margin: 0px auto;
+    border-radius: 60%;
+    width: 120px;
+    height: 100px;
+}
+}
+.mat-mdc-form-field{
+    width: 250px;
+    height: 70px;
+}
+
+
+.mdc-card{
+    max-width: 200px;
+}

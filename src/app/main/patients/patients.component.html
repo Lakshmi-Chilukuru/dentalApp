@@ -1,1 +1,23 @@
-<p>patients works!</p>
+<ng-container >
+    <h3>Patient Details</h3>
+    <ng-container >
+        <section class="allNotify">
+            <mat-form-field appearance="fill">
+                <mat-label>Search</mat-label>
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput type="search" [(ngModel)]="searchPatient" (keyup)="onSearchChange()">
+            </mat-form-field>
+            <div class="">
+                <h4>Patients</h4>
+                <div class="patients grid" *ngIf="patients.length>0 else noPatients">
+                    <app-patient-card [patients]="patients"></app-patient-card>
+                </div>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>
+<ng-template #noPatients>
+    <div class="middle">
+        <p>No Patients Data Found</p>
+    </div>
+</ng-template>

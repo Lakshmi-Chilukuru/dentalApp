@@ -1,0 +1,45 @@
+export interface Patient{
+    name:string,
+    age:number,
+    id:string,
+    blood:string,
+    mobile:number
+}
+
+export const patientDetails:Patient[] =[
+    {
+        name:'Lakshmi',
+        age:24,
+        id:'235325',
+        blood:'B+ve',
+        mobile:9391451299
+    },
+    {
+        name:'Narayana',
+        age:24,
+        id:'7574',
+        blood:'B+ve',
+        mobile:9391451299
+    },
+    {
+        name:'Chilukuru',
+        age:24,
+        id:'45753',
+        blood:'B+ve',
+        mobile:9391451299
+    },
+    {
+        name:'Lakshmi',
+        age:24,
+        id:'098765',
+        blood:'B+ve',
+        mobile:9391451299
+    },
+    {
+        name:'Lakshmi',
+        age:24,
+        id:'355',
+        blood:'B+ve',
+        mobile:9391451299
+    }
+] 

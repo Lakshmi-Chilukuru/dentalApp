@@ -4,7 +4,7 @@
         <button mat-stroked-button color="primary"><mat-icon>person_add</mat-icon> Register Patient</button>
     </div>
     <ng-container>
-        <section class="allNotify"s>
+        <section class="allNotify">
             <p><mat-icon>calendar_today</mat-icon> Today's Appointments</p>
             <section class="notiSec" *ngFor="let item of appData"
             [ngClass]="{'completed': item.status == 'Completed',

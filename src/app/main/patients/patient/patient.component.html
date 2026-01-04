@@ -1,0 +1,48 @@
+<ng-container>
+    <div class="cardD flex">
+        <div class="profile">
+            <img mat-card-image src="assets/profilepic.png" alt="img">
+        </div>
+        <div class="detail">
+            <p>Lakshmi Narayana</p>
+            <p>Patient ID: PT-2024-1547</p>
+            <p><span>34yrs</span> <span>Female</span> <span>Blood: O<sup>+</sup></span></p>
+            <p>Mobile: 9391451299</p>
+        </div>
+    </div>
+    <div class="dentalCard">
+        <p>Dental Chart</p>
+        <div class="chart flex">
+            <div class="teeth" *ngFor="let te of tooth;trackBy:toothDetail" (click)="showTeethType(te)">
+                <div class="teeth_num">{{te.teeth}}</div>
+                <div class="te_treat" [ngClass]="{'healthy':te.treatment == 'healthy',
+                                                'cavity':te.treatment == 'cavity',
+                                                'filled':te.treatment == 'filled',
+                                                'crown' : te.treatment == 'crown',
+                                                'root-canal':te.treatment == 'rootcanal',
+                                                'missing':te.treatment == 'missing'
+                }"></div>
+            </div>
+        </div>
+        <div class="flex">
+             <div class="teeth_details"*ngFor="let te of treatmentType" >
+            <span class="block"  [ngClass]="{'healthy':te == 'healthy',
+                                                'cavity':te == 'cavity',
+                                                'filled':te== 'filled',
+                                                'crown' : te == 'crown',
+                                                'root-canal':te == 'rootcanal',
+                                                'missing':te == 'missing'
+                }"></span>
+            <span>
+                {{te}}
+            </span>
+        </div>
+        </div>
+        <ng-container [ngTemplateOutlet]="showTeeth"></ng-container>
+    </div>
+</ng-container>
+<ng-template let-data="data" #showTeeth>
+    <div class="box" *ngIf="teeth_num">
+        <p><strong>Tooth #{{teeth_num}}</strong> - {{teethCondition}}</p>
+    </div>
+</ng-template>

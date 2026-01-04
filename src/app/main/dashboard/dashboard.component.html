@@ -1,4 +1,4 @@
-<ng-container>
+<ng-container *ngIf="cardData else loader">
     <section class="container">
         <section class="cummulativeData">
             <div class="minCard" *ngFor="let card of cardData">
@@ -65,3 +65,7 @@
     </section>
 
 </ng-container>
+
+<ng-template #loader>
+    <app-loader></app-loader>
+</ng-template>

@@ -1,0 +1,90 @@
+@import 'src/styles/variables.less';
+
+.card {
+    border-radius: 8px;
+    border: 1px solid #f0efef;
+    background-color: @card-backgroundColor;
+    padding: 12px;
+    margin: 24px 0;
+}
+
+.cardD {
+    .card();
+    min-width: 600px;
+}
+
+.dentalCard {
+    .card();
+    width: 600px;
+}
+
+img {
+    margin: 0px auto;
+    border-radius: 60%;
+    width: 120px;
+    height: 100px;
+}
+
+.chart {
+    flex-wrap: wrap;
+    .card();
+}
+
+.teeth {
+    flex-direction: column;
+    display: flex;
+    width: 14px;
+    flex-direction: column;
+
+    .teeth_num {
+        font-size: 10px;
+    }
+
+    .te_treat {
+        width: 10px;
+        height: 24px;
+        border-radius: 8px;
+    }
+}
+
+.healthy {
+    border: 1.5px solid #99a1af;
+    background: #fff;
+}
+
+.missing {
+    border: 1.5px solid #99a1af;
+    background: #e5e7eb;
+}
+
+.cavity {
+    border: 1.5px solid #fb2c36;
+    background: #ffc9c9;
+}
+
+.filled {
+    border: 1.5px solid #2b7fff;
+    background: #bedbff;
+}
+
+.crown {
+    border: 1.5px solid #d08700;
+    background: #fff085;
+}
+
+.root-canal {
+    border: 1.5px solid #ad46ff;
+    background: #e9d4ff;
+}
+
+.block {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+.box{
+    .card();
+    border: 1px solid #bedbff;
+    background-color: #eff6ff;
+}

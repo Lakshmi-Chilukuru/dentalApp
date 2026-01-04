@@ -1,0 +1,15 @@
+<div class="patients">
+    <mat-card class="patient" *ngFor="let patient of patients" (click)="getPatientDetail(patient.id)">
+        <mat-card-header>
+            <mat-card-title>{{patient.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/profilepic.png" [alt]="patient.name">
+        <mat-card-content>
+            <p>Id:{{patient.id}}</p>
+            <p>Name: {{patient.name}}</p>
+            <p>Age: {{patient.age}} B<sup>+</sup></p>
+            <p>Mobile : {{patient.mobile}}</p>
+        </mat-card-content>
+    </mat-card>
+
+</div>

@@ -4,11 +4,12 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from "@angular/router";
+import { LoaderComponent } from '../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, RouterLink, DatePipe],
+  imports: [CommonModule, MatIconModule, MatButtonModule, RouterLink, DatePipe,LoaderComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.less'
 })
@@ -18,12 +19,14 @@ export class DashboardComponent implements OnInit {
   patients!:any[];
 
   ngOnInit(): void {
-    this.cardData = [
+    setTimeout(()=>{
+      this.cardData = [
       {type:"Today's Appointments", count:12,menuLogo: 'calendar_today',},
       {type:"Total Patients", count : 847,menuLogo: 'group',},
       {type:"Pending Treatments",count:23,menuLogo: 'group',},
       {type: "Monthly Revenue", count:42.5,menuLogo: 'group',}
     ]
+    },2000)
     this.treatmentDetails= [
       {time: "9:00",name:'lakshmi',treatmentType:"RootCanal",status:"Pending"},
       {time: "9:00",name:'lakshmi',treatmentType:"RootCanal",status:"In Progress"},
